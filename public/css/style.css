@@ -1,0 +1,850 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ================= */
+/* Navbar */
+/* ================= */
+.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background: transparent;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 70px;
+  height: 70px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ccc;
+}
+
+.login-btn {
+  background-color: #155724;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0d3f1c;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+}
+
+/* ================= */
+/* Hero Section */
+/* ================= */
+.hero {
+  background: url('/assets/bgmasjid.png') center center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+/* ================= */
+/* Info Container (Jadwal) */
+/* ================= */
+.info-container {
+  position: relative;
+  margin: 0 auto;
+  background: #fff;
+  width: 60%;
+  border-radius: 16px;
+  padding: 1rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  top: -8vh;
+  z-index: 10;
+}
+
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.info-left, .info-center, .info-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.info-left img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.info-right {
+  justify-content: center;
+}
+
+.schedule-header {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.schedule-row {
+  font-size: 0.85rem;
+}
+
+.highlight {
+  color: #25652b;
+  font-weight: bold;
+}
+
+/* ================= */
+/* Kegiatan Section */
+/* ================= */
+.kegiatan {
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.kegiatan h2 {
+  text-align: center;
+  color: #014421;
+  margin-bottom: 2rem;
+}
+
+.kegiatan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.kegiatan-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kegiatan-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.kegiatan-item h3 {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: #2b2727;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.kegiatan-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.read-more-wrap {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.read-more-btn {
+  display: inline-block;
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 0.6rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #25652b;
+  transform: translateY(-2px);
+}
+
+/* ================= */
+/* Donasi Section */
+/* ================= */
+.donasi {
+  padding: 3rem 1rem;
+  background-color: #fff;
+}
+
+.judul-section {
+  text-align: center;
+  font-size: 2rem;
+  color: #014421;
+  margin-bottom: 2rem;
+}
+
+.donasi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.donasi-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donasi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.donasi-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.donasi-info {
+  padding: 1rem;
+}
+
+.progress-bar {
+  background-color: #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 8px;
+  margin: 0.5rem 0;
+}
+
+.progress {
+  background-color: #f4b400;
+  height: 100%;
+}
+
+.terkumpul, .hari {
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+
+.btn-donasi-wrap {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-donasi {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 0.6rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-donasi:hover {
+  background-color: #25652b;
+  transform: translateY(-2px);
+}
+
+/* ================= */
+/* About Section */
+/* ================= */
+.about {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.about h2 {
+  color: #014421;
+  margin-bottom: 1rem;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.about-text strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.about:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
+}
+
+/* ================= */
+/* Widgets Section */
+/* ================= */
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 70%;
+  margin: 2rem auto 4rem auto;
+}
+
+.widget-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widget-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.widget-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #014421;
+  margin-bottom: 0.2rem;
+}
+
+.widget-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.footer {
+  background-color: #1c1c1c;
+  color: #fff;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  width: 60px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.footer-socials a {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #129e12;
+}
+
+.footer-bottom {
+  background-color: #fce9da;
+  color: #000;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* ================= */
+/* Responsive */
+/* ================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #014421;
+    position: absolute;
+    right: 0;
+    top: 70px;
+    padding: 1rem;
+    border-radius: 0 0 0 8px;
+  }
+
+  .nav-right.active .nav-links {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .kegiatan-grid,
+  .donasi-grid,
+  .widgets-container {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+  }
+
+  .info-container {
+    width: 90%;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .about {
+    max-width: 90%;
+  }
+}
+
+/*CSS UNTUK KEGIATAN*/
+.navbar-kegiatan {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background: #098a3e;
+}
+
+.navbar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 70px;
+  height: 70px;
+}
+
+.filter-status {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.filter-status a {
+  color: #2e7d32;
+  text-decoration: none;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.filter-status a.active {
+  text-decoration: underline;
+}
+
+.kegiatan-page .kegiatan-item {
+  display: flex;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.kegiatan-page .kegiatan-item img {
+  width: 180px;
+  object-fit: cover;
+}
+
+.kegiatan-page .kegiatan-detail {
+  padding: 1rem;
+}
+
+.kegiatan-page .kegiatan-detail h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.kegiatan-page .kegiatan-detail p {
+  margin: 0.2rem 0;
+}
+
+.kegiatan-page .kegiatan-detail small {
+  color: #666;
+}  
+
+.back-btn {
+  color: #fff;
+  background-color: #155724;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-left: auto;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #0e3d1c;
+}
+
+/* CSS KATEGORI */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.background-kategori {
+  background: 
+    linear-gradient(120deg, #0f4c75, #3282b8), url('/assets/Pattern.png');
+  background-size: cover;
+  background-blend-mode: overlay;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.box-kategori {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 400px;
+}
+
+.box-kategori h1 {
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.kategori-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px auto;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.kategori-btn:hover {
+  background-color: #e0f7fa;
+  transform: scale(1.05);
+}
+
+/* CSS UNTUK DONASI UANG TUNAI */
+.background-donasi {
+  background: 
+    linear-gradient(to right, #136a8a, #267871), url('/assets/pattern.png');
+  background-size: cover;
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.donasi-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.donasi-box h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.donasi-box input,
+.donasi-box select,
+.donasi-box textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+}
+
+.btn-donasi {
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.alert-success {
+  margin-top: 1rem;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Notifikasi Donasi Sukses */
+.notifikasi-container {
+  background: 
+    linear-gradient(to right, #136a8a, #267871), url('/assets/pattern.png');
+  background-size: cover;
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.notifikasi-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  width: 90%;
+  max-width: 500px;
+}
+
+.icon-notif {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.notifikasi-box h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.notifikasi-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.btn-kembali-notif {
+  background-color: #cddc39;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-kembali-notif:hover {
+  background-color: #afb42b;
+}
+
+/*login*/
+/* Container form */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Box Login */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Judul login */
+.login-box h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+/* Form group */
+.form-group-login {
+  margin-bottom: 1.3rem;
+  text-align: left;
+}
+
+.form-group-login label {
+  color: #fff;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.form-group-login input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Tombol login */
+.btn-login-pg {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 30px;
+  background-color: #2e7d32;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login-pg:hover {
+  background-color: #25652b;
+  transform: scale(1.03);
+}
+
+/* Pesan error */
+.error-message {
+  color: #ffdede;
+  background-color: #ff4d4d;
+  padding: 0.7rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.background-profil {
+  background: linear-gradient(135deg, #016170, #0077c0);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-profil {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 30px 40px;
+  border-radius: 15px;
+  color: #fff;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.box-profil label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.box-profil input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.btn-kembali-profil {
+  display: block;
+  margin-top: 20px;
+  background-color: #ffd900;
+  color: #000;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+}
